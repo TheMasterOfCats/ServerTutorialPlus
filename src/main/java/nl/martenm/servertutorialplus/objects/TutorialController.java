@@ -136,6 +136,9 @@ public class TutorialController {
         if(current == serverTutorial.points.size() - 1){
             //Tutorial has been finished!
             finish();
+            if (!(plugin.getServer().getPluginManager().getPlugin("TAB") == null)) {
+                player.performCommand("tab scoreboard");
+            }
         } else{
             current++;
             playedPoint = serverTutorial.points.get(current).createPlay(player, oldValuesPlayer, this::finishPoint);
