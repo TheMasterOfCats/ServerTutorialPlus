@@ -61,6 +61,9 @@ public class TutorialController {
             plugin.inTutorial.remove(player.getUniqueId());
             plugin.lockedPlayers.remove(player.getUniqueId());
             plugin.lockedViews.remove(player.getUniqueId());
+            if (!(plugin.getServer().getPluginManager().getPlugin("TAB") == null)) {
+                player.performCommand("tab scoreboard");
+            }
             return;
         }
 
