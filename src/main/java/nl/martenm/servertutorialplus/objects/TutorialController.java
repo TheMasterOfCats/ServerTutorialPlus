@@ -144,7 +144,7 @@ public class TutorialController {
             //Tutorial has been finished!
             finish();
             if (!(plugin.getServer().getPluginManager().getPlugin("TAB") == null)) {
-                player.performCommand("tab scoreboard");
+                player.performCommand("tab scoreboard on " + player.getName() + " -s");
             }
         } else{
             current++;
