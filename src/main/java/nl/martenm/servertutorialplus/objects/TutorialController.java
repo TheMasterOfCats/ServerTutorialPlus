@@ -54,7 +54,7 @@ public class TutorialController {
         TutorialStartEvent event = new TutorialStartEvent(serverTutorial, player);
         plugin.getServer().getPluginManager().callEvent(event);
         if (!(plugin.getServer().getPluginManager().getPlugin("TAB") == null)) {
-            player.performCommand("tab scoreboard");
+            player.performCommand("tab scoreboard off " + player.getName() + " -s");
         }
 
         if(event.isCancelled()){
