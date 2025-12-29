@@ -53,6 +53,10 @@ public class TutorialController {
         //FIRE event!
         TutorialStartEvent event = new TutorialStartEvent(serverTutorial, player);
         plugin.getServer().getPluginManager().callEvent(event);
+        if (!(plugin.getServer().getPluginManager().getPlugin("TAB") == null)) {
+            player.performCommand("tab scoreboard");
+        }
+
         if(event.isCancelled()){
             plugin.inTutorial.remove(player.getUniqueId());
             plugin.lockedPlayers.remove(player.getUniqueId());
